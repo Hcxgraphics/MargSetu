@@ -1,0 +1,11 @@
+PostgreSQL # for local database
+PostGIS # for local database
+pgAdmin
+sqlalchemy 
+psycopg2-binary 
+python-dotenv
+
+# for data extraction
+pandas 
+lxml 
+html5lib

@@ -1,0 +1,19 @@
+import pandas as pd
+import os
+from sqlalchemy import create_engine
+from dotenv import load_dotenv
+
+load_dotenv("../backend/.env")
+DATABASE_URL = os.getenv("DATABASE_URL")
+engine = create_engine(DATABASE_URL)
+print(DATABASE_URL)
+df = pd.read_csv("../data/margsetu_hospitals.csv")
+
+df.to_sql(
+    "hospitals",
+    engine,
+    if_exists="append",
+    index=False
+)
+
+print("Hospitals uploaded")
